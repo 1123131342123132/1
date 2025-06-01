@@ -1,0 +1,167 @@
+<!--
+/*   _________________________________________________________________________________
+    |                                                                                 |
+    |  [ 0d8m was here ]                                                              |
+    |                                                                                 |
+    |  Just a friendly heads up							                              |
+    |  No data was modified or deleted. I found a serious vulnerability               |
+    |  in your system and used it only to demonstrate the risk.                       |
+    |                                                                                 |
+    |  This could have been someone with malicious intent who might have:             |
+    |  - Stolen sensitive data                                                        |
+    |  - Database wipe                                                                |
+    |  - Planted malware                                                              |
+    |  - Demanded ransom                                                              |
+    |                                                                                 |
+    |  Consider this a free pentest - fix the vuln before real attackers find it.     |
+    |	                     			                                              |
+    |  - 0d8m                                                                         |
+    |_________________________________________________________________________________|
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>accidentally logged in, oops</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  body {
+    background: #111111;
+    color: #ff5555;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .image-container {
+    margin-bottom: -55px;
+  }
+  
+  .image-container img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.95;
+    pointer-events: none;
+  }
+  
+  .main-title {
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .subtitle {
+    font-size: 1.1em;
+    font-weight: 400;
+    font-style: italic;
+    color: #cccccc;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  
+  .hashtags {
+    font-size: 0.95em;
+    color: #999999;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  audio {
+    width: 320px;
+    max-width: 100%;
+    height: 40px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding: 30px 15px;
+    }
+    
+    .main-title {
+      font-size: 1.8em;
+    }
+    
+    .subtitle {
+      font-size: 1em;
+    }
+    
+    .image-container img {
+      max-width: 320px;
+    }
+    
+    audio {
+      width: 280px;
+    }
+  }
+</style>
+</head>
+<body oncontextmenu="return false;">
+
+<div class="container">
+  <div class="image-container">
+    <img src="be2b0010a8141ejd82hd92shs11.png" alt="Defacement Image" />
+  </div>
+
+  <div class="main-title">♥ Pwn3dz by Ød8m ♥</div>
+
+  <div class="subtitle">
+    ~ Don't take it personal — you did a good job. I just did better. ~
+  </div>
+
+  <div class="hashtags">
+    #MienFührer &nbsp;&nbsp; #ErnstJünger
+  </div>
+
+  <audio controls autoplay src="be2b0010a8141ejd82hd92shs12.mp3" preload="auto"></audio>
+</div>
+
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.key === 'u')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('click', function() {
+    const audio = document.querySelector('audio');
+    if (audio.paused) {
+      audio.play().catch(e => console.log('Audio play failed:', e));
+    }
+  });
+</script>
+
+</body>
+</html>
